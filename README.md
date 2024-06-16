@@ -34,7 +34,7 @@ Para executar o projeto no VS Code, siga os passos abaixo:
 
 Abra o terminal do VS Code e clone o repositório do projeto:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git](https://github.com/FernandoZgodaNeto/monitoramento-criptomoeda.git
+git clone https://github.com/FernandoZgodaNeto/monitoramento-criptomoeda.git
 
 2. **Abra o projeto no VS Code:**
 
