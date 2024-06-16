@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Monitoramento de Criptomoedas</title>
+</head>
+<body>
+    <h1>Monitoramento de Criptomoedas</h1>
+    <form action="/price" method="post">
+        <label for="cryptoId">Escolha a criptomoeda:</label>
+        <input type="text" id="cryptoId" name="cryptoId" placeholder="Ex: bitcoin">
+        <button type="submit">Ver preço</button>
+    </form>
+</body>
+</html>

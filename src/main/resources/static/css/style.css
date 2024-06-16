@@ -1,0 +1,75 @@
+/* Importando a fonte do Google - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --bg: #F4F5FA;
+    --white: #fff;
+    --primary-color: #F7931A;
+}
+
+/* Configuração global */
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+/* NavBar */
+.navbar .navbar-brand {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Cards */
+.card {
+    background-color: var(--white);
+    border: none;
+}
+
+/* Card Description */
+.description p {
+    font-size: 14px;
+}
+
+.description .people {
+    width: 50%;
+    margin-bottom: 0;
+}
+
+/* Card Converter */
+.converter .bx-right-arrow-alt {
+    font-size: 20px;
+}
+
+.converter .title {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.converter .update-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transition: 0.4s ease;
+}
+
+.converter .update-btn:hover {
+    background-color: var(--bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+/* Remover bordas e sombras Bootstrap */
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.form-select:focus {
+    box-shadow: none;
+    outline: none;
+}

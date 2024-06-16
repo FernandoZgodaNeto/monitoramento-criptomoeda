@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Criptomoeda</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
+</head>
+<body>
+    <h1>Criptomoeda: <span th:text="${cryptoId}"></span></h1>
+    <h2>Preço em BRL: <span th:text="${priceInBrl}"></span></h2>
+
+    <canvas id="priceChart"></canvas>
+
+    <script th:inline="javascript">
+        // Pegar os dados do Thymeleaf e processá-los
+        const prices = /*[[${prices}]]*/ [];
+
+        // Extrair labels e dados para o gráfico
+        const labels = prices.map(price => {
+            const date = moment(price[0]);  // Converter para objeto Moment
+            return date.format('DD/MM/YYYY');  // Formatar como string 'DD/MM/YYYY'
+        });
+
+        const data = prices.map(price => price[1]);
+
+        // Configuração do gráfico
+        const ctx = document.getElementById('priceChart').getContext('2d');
+        const priceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Preço (BRL)',
+                    data: data,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            tooltipFormat: 'DD/MM/YYYY'  // Formato para tooltips
+                        },
+                        title: {
+                            display: true,
+                            text: 'Data'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Preço (BRL)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
